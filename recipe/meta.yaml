@@ -1,4 +1,4 @@
-{% set version = "0.4.2" %}
+{% set version = "0.5.1" %}
 
 package:
   name: scikit-bio
@@ -7,7 +7,7 @@ package:
 source:
   fn: scikit-bio-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/s/scikit-bio/scikit-bio-{{ version }}.tar.gz
-  md5: bbbe704410c59083e9eb65fa9d01a50d
+  md5: efe59910e361be0a1aa98c474505f885
 
 build:
   skip: true  # [win]
