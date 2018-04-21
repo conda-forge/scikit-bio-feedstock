@@ -11,12 +11,16 @@ RECIPE_ROOT=$FEEDSTOCK_ROOT/recipe
 docker info
 
 config=$(cat <<CONDARC
+
 channels:
  - conda-forge
  - defaults
+
 conda-build:
  root-dir: /feedstock_root/build_artefacts
+
 show_channel_urls: true
+
 CONDARC
 )
 
@@ -40,23 +44,31 @@ cat << EOF | docker run -i \
                         -a stdin -a stdout -a stderr \
                         condaforge/linux-anvil \
                         bash || exit 1
+
 set -e
 set +x
 export BINSTAR_TOKEN=${BINSTAR_TOKEN}
 set -x
 export PYTHONUNBUFFERED=1
+
 echo "$config" > ~/.condarc
 # A lock sometimes occurs with incomplete builds. The lock file is stored in build_artefacts.
 conda clean --lock
+
 conda install --yes --quiet conda-forge-build-setup
 source run_conda_forge_build_setup
+
+
 # Install the yum requirements defined canonically in the
 # "recipe/yum_requirements.txt" file. After updating that file,
 # run "conda smithy rerender" and this line be updated
 # automatically.
-/usr/bin/sudo -n yum install -y xorg-x11-server-Xvfb gtk2-devel
+/usr/bin/sudo -n yum install -y xorg-x11-server-Xvfb
+
+
 conda build /recipe_root --quiet || exit 1
 upload_or_check_non_existence /recipe_root conda-forge --channel=main || exit 1
+
 touch /feedstock_root/build_artefacts/conda-forge-build-done
 EOF
 
