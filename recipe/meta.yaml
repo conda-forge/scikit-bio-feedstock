@@ -23,17 +23,7 @@ requirements:
     - pip
     - cython
     - numpy 1.9.*
-    - toolchain
-    - lockfile >=0.10.2
-    - cachecontrol >=0.11.5
-    - decorator >=3.4.2
-    - ipython >=3.2.0
-    - matplotlib >=1.4.3
-    - natsort >=4.0.3
-    - pandas >=0.19.2
-    - scipy >=0.15.1
-    - nose >=1.3.7
-    - scikit-learn >=0.19.1
+
   run:
     - python
     - lockfile >=0.10.2
@@ -81,7 +71,7 @@ test:
     - skbio.util.tests
   commands:
     - python -m skbio.test  # [not linux]
-    - DISPLAY=localhost:1.0 xvfb-run -a bash -c 'python -m skbio.test'  # [linux]
+    - MPLBACKEND='Agg' python -m skbio.test  # [linux]
 
 about:
   home: http://scikit-bio.org
