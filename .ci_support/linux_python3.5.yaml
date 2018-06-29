@@ -1,8 +1,8 @@
 c_compiler:
-  - toolchain_c
-numpy:
-  - '1.9'
+- toolchain_c
 pin_run_as_build:
-  python: x.x
+  python:
+    min_pin: x.x
+    max_pin: x.x
 python:
-  - '3.5'
+- '3.5'
