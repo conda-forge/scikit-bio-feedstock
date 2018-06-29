@@ -1,13 +1,8 @@
 c_compiler:
-- toolchain_c
+  - toolchain_c
 numpy:
-- '1.9'
-pin_run_as_build: !!python/object/apply:collections.OrderedDict
-- - - python
-    - !!python/object/apply:collections.OrderedDict
-      - - - min_pin
-          - x.x
-        - - max_pin
-          - x.x
+  - '1.9'
+pin_run_as_build:
+  python: x.x
 python:
-- '3.6'
+  - '3.6'
