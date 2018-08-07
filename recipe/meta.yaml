@@ -37,7 +37,7 @@ requirements:
     - scipy >=0.15.1
     - nose >=1.3.7
     - scikit-learn >=0.19.1
-    - hdmedians >= 0.13    
+    - hdmedians >=0.13    
 
 test:
   imports:
