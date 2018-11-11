@@ -1,7 +1,6 @@
 {% set name = "scikit-bio" %}
 {% set version = "0.5.4" %}
-{% set sha256 = "3243f1995ef24643c09ff4d9391a79528aadd8232e5aa5d66c38d7b2e0c92f24" %}
-{% set build_num = "0" %}
+
 
 package:
   name: {{ name|lower }}
@@ -10,20 +9,22 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  sha256: "3243f1995ef24643c09ff4d9391a79528aadd8232e5aa5d66c38d7b2e0c92f24"
 
 build:
   skip: true  # [win or py2k]
-  number: {{ build_num }}
+  number: 1000
   script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
   build:
+    - {{ compiler('c') }}
+  host:
     - python
     - pip
     - cython
-    - numpy 1.9.*
-    - nose >=1.3.7
+    - numpy
+    - nose
   run:
     - python
     - lockfile >=0.10.2
@@ -32,12 +33,12 @@ requirements:
     - ipython >=3.2.0
     - matplotlib >=1.4.3
     - natsort >=4.0.3
-    - numpy >=1.9.2,<1.14.0
+    - {{ pin_compatible('numpy') }}
     - pandas >=0.19.2,<0.23.0
     - scipy >=0.15.1
     - nose >=1.3.7
     - scikit-learn >=0.19.1
-    - hdmedians >=0.13    
+    - hdmedians >=0.13
 
 test:
   imports:
