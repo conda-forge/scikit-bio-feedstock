@@ -1,7 +1,7 @@
 {% set name = "scikit-bio" %}
 {% set version = "0.5.4" %}
 {% set sha256 = "3243f1995ef24643c09ff4d9391a79528aadd8232e5aa5d66c38d7b2e0c92f24" %}
-{% set build_num = "0" %}
+{% set build_num = "1" %}
 
 package:
   name: {{ name|lower }}
