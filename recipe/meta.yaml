@@ -19,10 +19,12 @@ build:
 
 requirements:
   build:
+    - {{ compiler('c') }}
+  host:
     - python
     - pip
     - cython
-    - numpy 1.9.*
+    - numpy
   run:
     - python
     - lockfile >=0.10.2
@@ -31,12 +33,12 @@ requirements:
     - ipython >=3.2.0
     - matplotlib >=1.4.3
     - natsort >=4.0.3
-    - numpy >=1.9.2
+    - {{ pin_compatible('numpy') }}
     - pandas >=0.19.2
     - scipy >=0.15.1
     - pytest
     - scikit-learn >=0.19.1
-    - hdmedians >=0.13    
+    - hdmedians >=0.13
 
 test:
   imports:
