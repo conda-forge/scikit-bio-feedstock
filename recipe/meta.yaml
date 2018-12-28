@@ -1,7 +1,5 @@
 {% set name = "scikit-bio" %}
 {% set version = "0.5.5" %}
-{% set sha256 = "9fa813be66e88a994f7b7a68b8ba2216e205c525caa8585386ebdeebed6428df" %}
-{% set build_num = "0" %}
 
 package:
   name: {{ name|lower }}
@@ -10,11 +8,11 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  sha256: 9fa813be66e88a994f7b7a68b8ba2216e205c525caa8585386ebdeebed6428df
 
 build:
   skip: true  # [win or py2k]
-  number: {{ build_num }}
+  number: 1000
   script: {{ PYTHON }} -m pip install --no-deps --ignore-installed .
 
 requirements:
