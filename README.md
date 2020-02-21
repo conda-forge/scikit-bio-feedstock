@@ -113,4 +113,5 @@ Feedstock Maintainers
 * [@ebolyen](https://github.com/ebolyen/)
 * [@mortonjt](https://github.com/mortonjt/)
 * [@wasade](https://github.com/wasade/)
+* [@thermokarst](https://github.com/thermokarst/)
 
