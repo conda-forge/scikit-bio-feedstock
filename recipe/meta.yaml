@@ -10,9 +10,10 @@ source:
   sha256: 48b73ec53ce0ff2c2e3e05f3cfcf93527c1525a8d3e9dd4ae317b4219c37f0ea
   patches:
     - scikit-bio-pr-1719-backport.patch
+    - scikit-bio-pr-1720-backport.patch
 
 build:
-  skip: true  # [win or py2k]
+  skip: true  # [win]
   number: 3
   script: {{ PYTHON }} -m pip install . -vv
 

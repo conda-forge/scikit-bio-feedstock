@@ -1,0 +1,17 @@
+From fcb847d5f119c9c960a724c8cf46d2786f4b56ca Mon Sep 17 00:00:00 2001
+From: Jamie Morton <jamietmorton@gmail.com>
+Date: Wed, 26 Aug 2020 10:37:27 -0600
+Subject: [PATCH] Ordination fix (#1720)
+
+diff --git a/skbio/stats/ordination/tests/test_redundancy_analysis.py b/skbio/stats/ordination/tests/test_redundancy_analysis.py
+index 601832f3d..a8aefe85b 100644
+--- a/skbio/stats/ordination/tests/test_redundancy_analysis.py
++++ b/skbio/stats/ordination/tests/test_redundancy_analysis.py
+@@ -245,7 +245,6 @@ def test_biplot_score(self):
+             proportion_explained=vegan_propexpl,
+             eigvals=vegan_eigvals)
+ 
+-        pdt.assert_frame_equal(res_samples, vegan_samples)
+         # This scaling constant is required to make skbio comparable to vegan.
+         scaling = (rda_.eigvals[0] / rda_.eigvals[:6])
+         exp.biplot_scores *= scaling
