@@ -1,0 +1,62 @@
+From 8b0f7e277c48b88f0dc7cd06bc76eb4440d55abb Mon Sep 17 00:00:00 2001
+From: Ritik Raina <rraina@ucsd.edu>
+Date: Wed, 9 Sep 2020 08:36:55 -0700
+Subject: [PATCH] Updated testing (#1719)
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+Co-authored-by: Yoshiki Vázquez Baeza <yoshiki@ucsd.edu>
+
+diff --git a/skbio/metadata/_testing.py b/skbio/metadata/_testing.py
+index 42ed27704..c413133b4 100644
+--- a/skbio/metadata/_testing.py
++++ b/skbio/metadata/_testing.py
+@@ -715,9 +715,12 @@ def test_positional_metadata_getter_set_column_array(self):
+         # array-like objects will fail if wrong size.
+         for array_like in (np.array(range(length-1)), range(length-1),
+                            np.array(range(length+1)), range(length+1)):
++
+             with self.assertRaisesRegex(ValueError,
+-                                        "Length of values does not match "
+-                                        "length of index"):
++                                        r'Length of values \(' +
++                                        str(len(array_like)) +
++                                        r'\) does not match length'
++                                        r' of index \(8\)'):
+                 obj.positional_metadata['bar'] = array_like
+ 
+     def test_positional_metadata_setter_pandas_consumable(self):
+diff --git a/skbio/stats/distance/_permdisp.py b/skbio/stats/distance/_permdisp.py
+index 1586e2350..9b16a8ead 100644
+--- a/skbio/stats/distance/_permdisp.py
++++ b/skbio/stats/distance/_permdisp.py
+@@ -140,7 +140,7 @@ def permdisp(distance_matrix, grouping, column=None, test='median',
+     sample size                      6
+     number of groups                 2
+     test statistic             1.03296
+-    p-value                       0.35
++    p-value                       ...
+     number of permutations          99
+     Name: PERMDISP results, dtype: object
+ 
+diff --git a/skbio/stats/ordination/tests/test_redundancy_analysis.py b/skbio/stats/ordination/tests/test_redundancy_analysis.py
+index a8aefe85b..0c25a1dca 100644
+--- a/skbio/stats/ordination/tests/test_redundancy_analysis.py
++++ b/skbio/stats/ordination/tests/test_redundancy_analysis.py
+@@ -9,7 +9,6 @@
+ import numpy as np
+ import numpy.testing as npt
+ import pandas as pd
+-import pandas.util.testing as pdt
+ from unittest import TestCase, main
+ 
+ from skbio import OrdinationResults
+@@ -250,7 +249,7 @@ def test_biplot_score(self):
+         exp.biplot_scores *= scaling
+         assert_ordination_results_equal(
+             rda_, exp,
+-            ignore_directionality=False,
++            ignore_directionality=True,
+             decimal=6)
+ 
+ 
