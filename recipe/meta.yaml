@@ -14,31 +14,30 @@ source:
 
 build:
   skip: true  # [win]
-  number: 3
+  number: 4
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
     - {{ compiler('c') }}
   host:
-    - python
-    - pip
     - cython
     - numpy
-  run:
+    - pip
     - python
-    - lockfile >=0.10.2
+  run:
     - cachecontrol >=0.11.5
     - decorator >=3.4.2
+    - hdmedians >=0.13
     - ipython >=3.2.0
+    - lockfile >=0.10.2
     - matplotlib-base >=1.4.3
     - natsort >=4.0.3
     - {{ pin_compatible('numpy') }}
     - pandas >=1.0.0
-    - scipy >=1.3.0
-    - hdmedians >=0.13
+    - python
     - scikit-learn >=0.19.1
-    - pytest
+    - scipy >=1.3.0
 
 test:
   imports:
@@ -73,6 +72,10 @@ test:
     - skbio.util.tests
   commands:
     - MPLBACKEND='Agg' python -m skbio.test
+    - pip check
+  requires:
+    - pip
+    - pytest
 
 about:
   home: http://scikit-bio.org
