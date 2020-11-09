@@ -6,14 +6,16 @@ package:
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 48b73ec53ce0ff2c2e3e05f3cfcf93527c1525a8d3e9dd4ae317b4219c37f0ea
+  patches:
+    - scikit-bio-pr-1719-backport.patch
+    - scikit-bio-pr-1720-backport.patch
 
 build:
-  skip: true  # [win or py2k]
-  number: 2
-  script: {{ PYTHON }} -m pip install --no-deps --ignore-installed .
+  skip: true  # [win]
+  number: 3
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
@@ -29,7 +31,7 @@ requirements:
     - cachecontrol >=0.11.5
     - decorator >=3.4.2
     - ipython >=3.2.0
-    - matplotlib >=1.4.3
+    - matplotlib-base >=1.4.3
     - natsort >=4.0.3
     - {{ pin_compatible('numpy') }}
     - pandas >=1.0.0
@@ -79,7 +81,7 @@ about:
   license_file: COPYING.txt
   summary: 'Data structures, algorithms and educational resources for bioinformatics.'
   doc_url: http://scikit-bio.org
-  dev_url: http://github.com/biocore/scikit-bio
+  dev_url: https://github.com/biocore/scikit-bio
 
 extra:
   recipe-maintainers:
