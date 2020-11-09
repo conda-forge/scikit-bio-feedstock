@@ -178,6 +178,3 @@ Feedstock Maintainers
 * [@thermokarst](https://github.com/thermokarst/)
 * [@wasade](https://github.com/wasade/)
 
-
-<!-- dummy commit to enable rerendering -->
-
