@@ -1,5 +1,5 @@
 {% set name = "scikit-bio" %}
-{% set version = "0.5.6" %}
+{% set version = "0.5.7" %}
 
 package:
   name: {{ name|lower }}
@@ -14,7 +14,7 @@ source:
 
 build:
   skip: true  # [win]
-  number: 5
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -39,6 +39,7 @@ requirements:
     - hdmedians >=0.13
     - scikit-learn >=0.19.1
     - pytest
+    - h5py
 
 test:
   imports:
