@@ -7,10 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 48b73ec53ce0ff2c2e3e05f3cfcf93527c1525a8d3e9dd4ae317b4219c37f0ea
-  patches:
-    - scikit-bio-pr-1719-backport.patch
-    - scikit-bio-pr-1720-backport.patch
+  sha256: 6343ca0c621e2fcc5d1c042c8be3200664c5325956a83bea751cf1bcc75d1da9
 
 build:
   skip: true  # [win]
