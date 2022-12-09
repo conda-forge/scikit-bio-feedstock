@@ -75,7 +75,7 @@ about:
   home: http://scikit-bio.org
   license: BSD-3-Clause
   license_family: BSD
-  license_file: COPYING.txt
+  license_file: LICENSE.txt
   summary: 'Data structures, algorithms and educational resources for bioinformatics.'
   doc_url: http://scikit-bio.org
   dev_url: https://github.com/biocore/scikit-bio
