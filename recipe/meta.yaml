@@ -11,7 +11,7 @@ source:
 
 build:
   skip: true  # [win]
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -76,7 +76,7 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE.txt
-  summary: 'Data structures, algorithms and educational resources for bioinformatics.'
+  summary: Data structures, algorithms and educational resources for bioinformatics.
   doc_url: http://scikit-bio.org
   dev_url: https://github.com/biocore/scikit-bio
 
