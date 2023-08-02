@@ -1,5 +1,5 @@
 {% set name = "scikit-bio" %}
-{% set version = "0.5.8" %}
+{% set version = "0.5.9" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: d55a83c3e5f2ca1132744e1409233fb61d9af0c5a95deb7b291e6e340712b86b
+  sha256: 7ae044dc8bee231900248adc3a8659077e76140d56ac9f42bd01fb7981014910
 
 build:
   skip: true  # [win]
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -76,7 +76,7 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE.txt
-  summary: 'Data structures, algorithms and educational resources for bioinformatics.'
+  summary: Data structures, algorithms and educational resources for bioinformatics.
   doc_url: http://scikit-bio.org
   dev_url: https://github.com/biocore/scikit-bio
 
