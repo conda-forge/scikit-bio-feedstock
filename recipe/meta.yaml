@@ -84,8 +84,9 @@ about:
 
 extra:
   recipe-maintainers:
+    - qiyunzhu
+    - mortonjt
     - ebolyen
     - wasade
-    - mortonjt
     - thermokarst
     - ElDeveloper
