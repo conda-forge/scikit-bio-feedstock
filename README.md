@@ -247,6 +247,5 @@ Feedstock Maintainers
 * [@ebolyen](https://github.com/ebolyen/)
 * [@mortonjt](https://github.com/mortonjt/)
 * [@qiyunzhu](https://github.com/qiyunzhu/)
-* [@thermokarst](https://github.com/thermokarst/)
 * [@wasade](https://github.com/wasade/)
 
