@@ -75,12 +75,12 @@ test:
     - MPLBACKEND='Agg' python -m skbio.test
 
 about:
-  home: http://scikit-bio.org
+  home: https://scikit.bio
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE.txt
   summary: Data structures, algorithms and educational resources for bioinformatics.
-  doc_url: http://scikit-bio.org
+  doc_url: https://scikit.bio
   dev_url: https://github.com/scikit-bio/scikit-bio
 
 extra:
