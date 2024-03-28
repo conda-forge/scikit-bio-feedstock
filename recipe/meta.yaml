@@ -1,5 +1,5 @@
 {% set name = "scikit-bio" %}
-{% set version = "0.5.9" %}
+{% set version = "0.6.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 7ae044dc8bee231900248adc3a8659077e76140d56ac9f42bd01fb7981014910
+  sha256: 10105a7c3c15ae5910244927f29ba7aa35234b19ebe6513b8484547343b2c10f
 
 build:
   skip: true  # [win]
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -25,11 +25,10 @@ requirements:
     - python
     - pip
     - numpy
+    - cython
   run:
     - python
     - requests >=2.20.0
-    - decorator >=3.4.2
-    - ipython >=3.2.0
     - matplotlib-base >=1.4.3
     - natsort >=4.0.3
     - {{ pin_compatible('numpy') }}
@@ -38,6 +37,8 @@ requirements:
     - h5py >=3.6.0
     - hdmedians >=0.14.1
     - pytest
+    - biom-format
+    - setuptools
 
 test:
   imports:
@@ -74,18 +75,16 @@ test:
     - MPLBACKEND='Agg' python -m skbio.test
 
 about:
-  home: http://scikit-bio.org
+  home: https://scikit.bio
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE.txt
   summary: Data structures, algorithms and educational resources for bioinformatics.
-  doc_url: http://scikit-bio.org
-  dev_url: https://github.com/biocore/scikit-bio
+  doc_url: https://scikit.bio
+  dev_url: https://github.com/scikit-bio/scikit-bio
 
 extra:
   recipe-maintainers:
     - qiyunzhu
     - mortonjt
     - wasade
-    - ebolyen
-    - ElDeveloper
