@@ -3,15 +3,15 @@ About scikit-bio-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/scikit-bio-feedstock/blob/main/LICENSE.txt)
 
-Home: http://scikit-bio.org
+Home: https://scikit.bio
 
 Package license: BSD-3-Clause
 
 Summary: Data structures, algorithms and educational resources for bioinformatics.
 
-Development: https://github.com/biocore/scikit-bio
+Development: https://github.com/scikit-bio/scikit-bio
 
-Documentation: http://scikit-bio.org
+Documentation: https://scikit.bio
 
 Current build status
 ====================
