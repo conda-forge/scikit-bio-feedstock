@@ -38,6 +38,7 @@ requirements:
     - hdmedians >=0.14.1
     - pytest
     - biom-format
+    - setuptools
 
 test:
   imports:
