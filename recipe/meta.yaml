@@ -29,7 +29,6 @@ requirements:
   run:
     - python
     - requests >=2.20.0
-    - matplotlib-base >=1.4.3
     - natsort >=4.0.3
     - {{ pin_compatible('numpy') }}
     - pandas >=1.5.0
