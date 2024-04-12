@@ -11,7 +11,7 @@ source:
 
 build:
   skip: true  # [win]
-  number: 3
+  number: 4
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -29,7 +29,6 @@ requirements:
   run:
     - python
     - requests >=2.20.0
-    - matplotlib-base >=1.4.3
     - natsort >=4.0.3
     - {{ pin_compatible('numpy') }}
     - pandas >=1.5.0
