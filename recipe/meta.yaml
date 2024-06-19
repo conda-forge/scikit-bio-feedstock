@@ -1,5 +1,5 @@
 {% set name = "scikit-bio" %}
-{% set version = "0.6.0" %}
+{% set version = "0.6.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 10105a7c3c15ae5910244927f29ba7aa35234b19ebe6513b8484547343b2c10f
+  sha256: 2f62d90fb44990d90593f2312398989c816081868c4cc6aedba170893f397b8c
 
 build:
   skip: true  # [win]
-  number: 4
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -20,6 +20,7 @@ requirements:
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - cython
   host:
     - python
@@ -30,13 +31,11 @@ requirements:
     - python
     - requests >=2.20.0
     - natsort >=4.0.3
-    - {{ pin_compatible('numpy') }}
     - pandas >=1.5.0
     - scipy >=1.9.0
     - h5py >=3.6.0
-    - hdmedians >=0.14.1
+    - biom-format >=2.1.16
     - pytest
-    - biom-format
     - setuptools
 
 test:
