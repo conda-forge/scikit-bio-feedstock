@@ -1,5 +1,5 @@
 {% set name = "scikit-bio" %}
-{% set version = "0.6.1" %}
+{% set version = "0.6.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 2f62d90fb44990d90593f2312398989c816081868c4cc6aedba170893f397b8c
+  sha256: af217ad12243cdaeef74a8f3bebe0d04aefda2a22d963d634201a36318b1a404
 
 build:
   skip: true  # [win]
