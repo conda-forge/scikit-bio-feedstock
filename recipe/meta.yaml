@@ -12,7 +12,8 @@ source:
 build:
   number: 0
   script: |
-    patch -p1 < $RECIPE_ROOT/fix.patch
+    # monkey patch
+    sed -i 's/win32/xxxxx/' skbio/io/tests/test_registry.py
     {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -23,7 +24,6 @@ requirements:
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
     - cython
-    - patch
   host:
     - python
     - pip
