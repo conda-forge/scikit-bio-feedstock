@@ -1,5 +1,5 @@
---- test_registry.py.old	2024-07-08 01:55:31.224704990 -0700
-+++ test_registry.py.new	2024-07-08 01:55:57.256042814 -0700
+--- old/skbio/io/tests/test_registry.py	2024-07-08 02:14:29.999681850 -0700
++++ new/skbio/io/tests/test_registry.py	2024-07-08 02:15:22.635532940 -0700
 @@ -641,7 +641,7 @@
              return True, {}
  

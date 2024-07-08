@@ -12,7 +12,7 @@ source:
 build:
   number: 0
   script: |
-    patch -p1 < fix.patch
+    patch -p1 < $RECIPE_ROOT/fix.patch
     {{ PYTHON }} -m pip install . -vv
 
 requirements:
