@@ -71,7 +71,8 @@ test:
     - skbio.util.tests
   commands:
     # monkey patch to solve Windows test issue
-    - python -c "import pathlib; pathlib.Path('skbio', 'io', 'tests', 'test_registry.py').unlink()"
+    - find $SRC_DIR/.. -name "test_registry.py"
+    # python -c "import pathlib; pathlib.Path('skbio', 'io', 'tests', 'test_registry.py').unlink()"
     - python -m skbio.test
 
 about:
