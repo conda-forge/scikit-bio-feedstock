@@ -70,7 +70,7 @@ test:
     - skbio.util
     - skbio.util.tests
   commands:
-    - MPLBACKEND='Agg' python -m skbio.test
+    - python -m skbio.test
 
 about:
   home: https://scikit.bio
