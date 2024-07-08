@@ -1,5 +1,5 @@
 {% set name = "scikit-bio" %}
-{% set version = "0.6.1" %}
+{% set version = "0.6.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,16 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 2f62d90fb44990d90593f2312398989c816081868c4cc6aedba170893f397b8c
+  sha256: af217ad12243cdaeef74a8f3bebe0d04aefda2a22d963d634201a36318b1a404
 
 build:
-  skip: true  # [win]
   number: 0
-  script: {{ PYTHON }} -m pip install . -vv
+  script: |
+    # monkey patch
+    {% if win %}
+    del skbio\io\tests\test_registry.py
+    {% endif %}
+    {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
@@ -35,6 +39,7 @@ requirements:
     - scipy >=1.9.0
     - h5py >=3.6.0
     - biom-format >=2.1.16
+    - statsmodels >=0.14.0
     - pytest
     - setuptools
 
@@ -70,7 +75,7 @@ test:
     - skbio.util
     - skbio.util.tests
   commands:
-    - MPLBACKEND='Agg' python -m skbio.test
+    - python -m skbio.test
 
 about:
   home: https://scikit.bio
