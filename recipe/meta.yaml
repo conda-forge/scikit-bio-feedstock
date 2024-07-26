@@ -6,8 +6,8 @@ package:
   version: {{ version }}
 
 source:
-  git_url: https://github.com/scikit-bio/scikit-bio.git
-  git_rev: main
+  git_url: https://github.com/mataton/scikit-bio.git
+  git_rev: windows
   # url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   # sha256: af217ad12243cdaeef74a8f3bebe0d04aefda2a22d963d634201a36318b1a404
 
