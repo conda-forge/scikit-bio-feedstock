@@ -6,8 +6,10 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: af217ad12243cdaeef74a8f3bebe0d04aefda2a22d963d634201a36318b1a404
+  git_url: https://github.com/scikit-bio/scikit-bio.git
+  git_rev: main
+  # url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  # sha256: af217ad12243cdaeef74a8f3bebe0d04aefda2a22d963d634201a36318b1a404
 
 build:
   number: 1
