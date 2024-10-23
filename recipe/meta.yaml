@@ -10,7 +10,7 @@ source:
   sha256: af217ad12243cdaeef74a8f3bebe0d04aefda2a22d963d634201a36318b1a404
 
 build:
-  number: 0
+  number: 1
   script: |
     # monkey patch
     {% if win %}
