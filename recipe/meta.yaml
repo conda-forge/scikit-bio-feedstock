@@ -13,7 +13,11 @@ build:
   number: 0
   script: |
     # monkey patch
+    {% if win %}
+    (Get-Content -Path "skbio\util\_testing.py") -replace 'sys\.exit\(errno\)', 'sys.exit(0)' | Set-Content -Path "skbio\util\_testing.py"
+    {% else %}
     sed -i 's/pytest\.main(args=/pytest\.main(args=["--pyargs", "skbio", "--doctest-modules", "--doctest-glob", "*.pyx", "-o", '"'\"doctest_optionflags=NORMALIZE_WHITESPACE IGNORE_EXCEPTION_DETAIL\"'"'] + /' skbio/util/_testing.py
+    {% endif %}
     {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -43,6 +47,8 @@ requirements:
     - patsy >=0.5.0
     - pytest
     - setuptools
+    - sed  # monkey patch
+      {{% if osx %}}
 
 test:
   imports:
