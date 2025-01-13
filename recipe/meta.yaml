@@ -11,7 +11,10 @@ source:
 
 build:
   number: 0
-  script: {{ PYTHON }} -m pip install . -vv
+  script: |
+    # monkey patch
+    sed -i 's/pytest\.main(args=/pytest\.main(args=["--pyargs", "skbio", "--doctest-modules", "--doctest-glob", "*.pyx", "-o", '"'\"doctest_optionflags=NORMALIZE_WHITESPACE IGNORE_EXCEPTION_DETAIL\"'"'] + /' skbio/util/_testing.py
+    {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
