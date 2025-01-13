@@ -11,12 +11,7 @@ source:
 
 build:
   number: 1
-  script: |
-    # monkey patch
-    {% if win %}
-    del skbio\io\tests\test_registry.py
-    {% endif %}
-    {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
@@ -29,6 +24,7 @@ requirements:
   host:
     - python
     - pip
+    - setuptools
     - numpy
     - cython
   run:
