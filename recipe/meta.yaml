@@ -14,8 +14,8 @@ build:
   script: |
     # monkey patch
     {% if win %}
-    (Get-Content -Path "skbio\util\_testing.py") -replace 'sys\.exit\(errno\)', 'sys.exit(0)' | Set-Content -Path "skbio\util\_testing.py"
-    {% elif osx %}
+    (Get-Content skbio\util\_testing.py).Replace('sys\.exit\(errno\)', 'sys.exit(0)') | Set-Content skbio\util\_testing.py
+    {% elif subdir == "osx-64" %}
     sed -i '' 's/sys\.exit(errno)/sys.exit(0)/' skbio/util/_testing.py
     {% else %}
     sed -i 's/sys\.exit(errno)/sys.exit(0)/' skbio/util/_testing.py
