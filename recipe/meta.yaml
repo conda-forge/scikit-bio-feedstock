@@ -14,7 +14,7 @@ build:
   script: |
     # monkey patch
     {% if win %}
-    python -c "with open('skbio\util\_testing.py', 'r') as f: lines = f.readlines(); open('skbio\util\_testing.py', 'w').writelines(lines[:-1])"
+    python -c "with open(r'skbio\util\_testing.py', 'r') as f: lines = f.readlines(); open(r'skbio\util\_testing.py', 'w').writelines(lines[:-1])"
     {% elif osx and x86_64 %}
     sed -i '' 's/sys\.exit(errno)/sys.exit(0)/' skbio/util/_testing.py
     {% else %}
