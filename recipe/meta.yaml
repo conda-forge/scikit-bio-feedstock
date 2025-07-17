@@ -55,7 +55,6 @@ test:
   imports:
     - skbio
     - skbio.alignment
-    - skbio.alignment._lib
     - skbio.alignment.tests
     - skbio.diversity
     - skbio.diversity.alpha
@@ -63,10 +62,14 @@ test:
     - skbio.diversity.beta
     - skbio.diversity.beta.tests
     - skbio.diversity.tests
+    - skbio.embedding
+    - skbio.embedding.tests
     - skbio.io
     - skbio.io.format
     - skbio.io.format.tests
     - skbio.io.tests
+    - skbio.metadata
+    - skbio.metadata.tests
     - skbio.sequence
     - skbio.sequence.tests
     - skbio.stats
@@ -77,6 +80,8 @@ test:
     - skbio.stats.ordination
     - skbio.stats.ordination.tests
     - skbio.stats.tests
+    - skbio.table
+    - skbio.table.tests
     - skbio.tests
     - skbio.tree
     - skbio.tree.tests
