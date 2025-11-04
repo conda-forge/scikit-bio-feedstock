@@ -1,5 +1,5 @@
 {% set name = "scikit-bio" %}
-{% set version = "0.7.1.post1" %}
+{% set version = "0.7.1" %}
 
 package:
   name: {{ name|lower }}
@@ -10,7 +10,7 @@ source:
   sha256: cbd92418b711492837ea5ca3a088b540e725bea53a45bc2332b2631afd539f95
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
