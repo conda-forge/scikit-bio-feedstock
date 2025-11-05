@@ -6,11 +6,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 40d62692f195b98e1c2f8cf51534321d8b093eef92c1a84ec27e3cc9a1be437e
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.post1.tar.gz
+  sha256: cbd92418b711492837ea5ca3a088b540e725bea53a45bc2332b2631afd539f95
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
