@@ -1,13 +1,13 @@
 {% set name = "scikit-bio" %}
-{% set version = "0.7.3" %}
+{% set version = "0.7.4" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 2492ebf2f6432d24c1030a0cd96d7708c2b57bc31b097a5ec838881792401ec5
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 833f6a9e631483288385d628286f3d452f48383476bf125766d3f197dd9fa4ce
 
 build:
   number: 0
@@ -31,7 +31,6 @@ requirements:
     - python
     - requests >=2.20.0
     - decorator >=3.4.2
-    - natsort >=4.0.3
     - pandas >=1.5.0
     - scipy >=1.9.0
     - h5py >=3.6.0
@@ -43,6 +42,8 @@ requirements:
     - setuptools
 
 test:
+  requires:
+    - matplotlib
   imports:
     - skbio
     - skbio.alignment
