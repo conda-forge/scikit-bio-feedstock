@@ -8,9 +8,11 @@ package:
 source:
   url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
   sha256: 833f6a9e631483288385d628286f3d452f48383476bf125766d3f197dd9fa4ce
+  patches:
+    - permdisp-fast-cython-test.patch
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
